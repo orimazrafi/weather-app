@@ -9,5 +9,7 @@ Please clone the repository to you'r desktop and run inside the root folder(usin
 The app is for quering the weather per the remaining hours of the current day in four locations. Enjoy.
 
 
-![alt text](https://res.cloudinary.com/dyloyoawh/image/upload/v1616601021/Screen_Shot_2021-03-24_at_17.44.11_dutnvf.png)
+
+![alt text](https://res.cloudinary.com/dyloyoawh/image/upload/v1616331023/Screen_Shot_2021-03-21_at_14.49.49_nmjglw.png)
+
 
