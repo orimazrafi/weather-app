@@ -10,6 +10,7 @@ const filtersSlice = createSlice({
       { value: "", label: "" },
     ],
     selectedWeather: [],
+    loader: false,
   },
   reducers: {
     setCity: (state, { payload }) => {
@@ -24,6 +25,9 @@ const filtersSlice = createSlice({
     setSelectedWeather: (state, { payload }) => {
       state.selectedWeather = payload;
     },
+    setLoader: (state, { payload }) => {
+      state.loader = payload;
+    },
   },
 });
 
@@ -32,9 +36,11 @@ export const {
   setState,
   setOptionsForCity,
   setSelectedWeather,
+  setLoader,
 } = filtersSlice.actions;
 export const city = (state) => state.filters.city;
 export const state = (state) => state.filters.state;
 export const cityReduxOptions = (state) => state.filters.cityOptions;
 export const selectedWeather = (state) => state.filters.selectedWeather;
+export const loader = (state) => state.filters.loader;
 export default filtersSlice.reducer;

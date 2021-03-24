@@ -8,6 +8,8 @@ import {
 } from "../../features/Filters/FiltersSlice";
 import { DropdownWrapper } from "../../elements";
 import { useDispatch, useSelector } from "react-redux";
+import ErrorBoundryComponent from "../ErrorBoundryComponent/ErrorBoundryComponent";
+
 const stateOptions = [
   { value: "uk", label: "UK" },
   { value: "spain", label: "Spain" },
@@ -41,7 +43,6 @@ const UserSelection = () => {
     dispatch(setState(value));
     setActiveState({ value, label });
   };
-
   return (
     <DropdownWrapper>
       {[
@@ -69,4 +70,4 @@ const UserSelection = () => {
     </DropdownWrapper>
   );
 };
-export default UserSelection;
+export default ErrorBoundryComponent(UserSelection);
