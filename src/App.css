@@ -1,0 +1,21 @@
+html,
+body,
+#root {
+  font: 0.9rem sans-serif;
+  background: rgba(10, 31, 68, 0.3);
+  color: #1e2432;
+  height: 100%;
+  margin: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.218)),
+    url("https://res.cloudinary.com/dyloyoawh/image/upload/v1616518230/neda-astani-KWTkd7mHqKE-unsplash_o31cb8.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main--container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
