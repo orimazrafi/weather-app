@@ -1,7 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useFetch } from "./hooks";
 
 function App() {
+  useFetch();
   return (
     <div className="App">
       <header className="App-header">
