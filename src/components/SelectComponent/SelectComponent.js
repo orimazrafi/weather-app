@@ -1,11 +1,18 @@
+import { useContext } from "react";
 import { SelectWrapper } from "../../elements";
-
+import { ThemeContext } from "styled-components";
 const SelectComponent = ({ headline, options, activeValue, onChange }) => {
+  const globalTheme = useContext(ThemeContext);
+
   const customStyles = {
     option: (provided, state) => ({
       ...provided,
-      background: state.isSelected ? "black" : "rgba(250, 250, 250, 0.85)",
-      color: !state.isSelected ? "black" : "rgba(250, 250, 250, 0.85)",
+      background: state.isSelected
+        ? globalTheme?.blackColor
+        : globalTheme?.basicWhite,
+      color: !state.isSelected
+        ? globalTheme?.blackColor
+        : globalTheme?.basicWhite,
     }),
     control: () => ({
       display: "flex",

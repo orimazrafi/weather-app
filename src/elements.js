@@ -3,7 +3,7 @@ import Select from "react-select";
 
 export const AppHeadline = styled.div`
   margin: 1rem 0 0.5rem 0;
-  color: #343434;
+  color: ${({ theme }) => theme?.headlineColor};
   font-weight: normal;
   font-family: "Ultra", sans-serif;
   font-size: 2rem;
@@ -29,7 +29,7 @@ export const SelectWrapper = styled(Select)`
   border-radius: 20px;
   border: none;
   margin-bottom: 5%;
-  background: rgba(250, 250, 250, 0.85);
+  background: ${({ theme }) => theme?.basicWhite};
 `;
 
 export const StateText = styled.div`
@@ -45,7 +45,7 @@ export const CardWrapper = styled.div`
   flex-direction: column;
   width: 18.75rem;
   border-radius: 1.25rem;
-  background: rgba(250, 250, 250, 0.85);
+  background: ${({ theme }) => theme?.basicWhite};
   box-shadow: 0.625rem 0.625rem 0.3125rem 0 rgba(15, 15, 15, 0.404);
   & > h2.city--name {
     font-size: 2rem;
@@ -70,7 +70,7 @@ export const CityTemp = styled.div`
   font-size: 5rem;
   font-weight: bold;
   margin-top: 0.625rem;
-  color: #1e2432;
+  color: ${({ theme }) => theme?.darkBlueColor};
   text-align: center;
   & > sup {
     font-size: 1.5rem;
@@ -81,7 +81,15 @@ export const CityName = styled.h2`
     padding: 0.2rem 0.6rem;
     margin-left: 0.2rem;
     border-radius: 2rem;
-    color: #fff;
-    background: #ff8c00;
+    color: ${({ theme }) => theme?.blackColor};
+    background: ${({ theme }) => theme?.orangeColor};
+  }
+`;
+
+export const LoaderWrapper = styled.div`
+  height: 60vh;
+  display: flex;
+  & > div {
+    margin: auto;
   }
 `;
