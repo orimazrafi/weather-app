@@ -1,8 +1,13 @@
 import { useState, useEffect } from "react";
 import SelectComponent from "../SelectComponent/SelectComponent";
-import { setCity, setState } from "../../features/Filters/FiltersSlice";
+import {
+  setCity,
+  cityReduxOptions,
+  setState,
+  setSelectedWeather,
+} from "../../features/Filters/FiltersSlice";
 import { DropdownWrapper } from "../../elements";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 const stateOptions = [
   { value: "uk", label: "UK" },
   { value: "spain", label: "Spain" },
@@ -10,18 +15,15 @@ const stateOptions = [
 
 const UserSelection = () => {
   const dispatch = useDispatch();
-  const cityOptions = [
-    {
-      value: "barcelona",
-      label: "Barcelona",
-      cords: { lat: 41.3888, lon: 2.159 },
-    },
-    { value: "madrid", label: "Madrid", cords: { lat: 40.4165, lon: -3.7026 } },
-  ];
+  const cityOptions = useSelector(cityReduxOptions);
   const [activeState, setActiveState] = useState("");
   const [activeCity, setActiveCity] = useState("");
 
+  const isItTheSameSelection = (currnent, selectedValue) =>
+    currnent === selectedValue;
+
   const handleCity = ({ value, label }) => {
+    if (isItTheSameSelection(activeCity?.value, value)) return;
     setActiveCity({ value, label });
     dispatch(setCity(value));
   };
@@ -33,7 +35,9 @@ const UserSelection = () => {
   }, [activeState, dispatch]);
 
   const handleState = ({ value, label }) => {
+    if (isItTheSameSelection(activeState?.value, value)) return;
     /**reset Weather arraya and update state*/
+    dispatch(setSelectedWeather([]));
     dispatch(setState(value));
     setActiveState({ value, label });
   };
