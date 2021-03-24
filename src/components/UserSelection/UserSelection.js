@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import SelectComponent from "../SelectComponent/SelectComponent";
 import { setCity, setState } from "../../features/Filters/FiltersSlice";
+import { DropdownWrapper } from "../../elements";
 import { useDispatch } from "react-redux";
 const stateOptions = [
   { value: "uk", label: "UK" },
@@ -38,7 +39,7 @@ const UserSelection = () => {
   };
 
   return (
-    <div style={{ display: "flex" }}>
+    <DropdownWrapper>
       {[
         {
           headline: "Country",
@@ -61,7 +62,7 @@ const UserSelection = () => {
           onChange={dropdown.onChange}
         />
       ))}
-    </div>
+    </DropdownWrapper>
   );
 };
 export default UserSelection;
