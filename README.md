@@ -13,3 +13,7 @@ The app is for quering the weather per the remaining hours of the current day in
 ![alt text](https://res.cloudinary.com/dyloyoawh/image/upload/v1616601386/Screen_Shot_2021-03-24_at_17.55.56_c5zlat.png)
 
 
+![alt text](https://res.cloudinary.com/dyloyoawh/image/upload/v1616601422/Screen_Shot_2021-03-24_at_17.56.07_rbw1id.png)
+
+
+
