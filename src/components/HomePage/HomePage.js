@@ -1,10 +1,11 @@
 import { useFetch } from "../../hooks";
+import UserSelection from "../UserSelection/UserSelection";
 const HomePage = () => {
   useFetch();
   return (
     <div className="main--container">
       <h1>WEATHER APP</h1>
-      <h2>input fields</h2>
+      <UserSelection />
       <h2>weather</h2>
     </div>
   );
