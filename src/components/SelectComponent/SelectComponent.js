@@ -1,4 +1,4 @@
-import Select from "react-select";
+import { SelectWrapper } from "../../elements";
 
 const SelectComponent = ({ headline, options, activeValue, onChange }) => {
   const customStyles = {
@@ -15,7 +15,7 @@ const SelectComponent = ({ headline, options, activeValue, onChange }) => {
   return (
     <label className="state--label">
       <div className="input--headline">{headline}</div>
-      <Select
+      <SelectWrapper
         options={options}
         value={activeValue}
         onChange={onChange}
